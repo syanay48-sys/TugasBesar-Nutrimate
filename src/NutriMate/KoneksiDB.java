@@ -1,0 +1,22 @@
+package NutriMate;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class KoneksiDB {
+    private static final String URL = "jdbc:mysql://localhost:3000/nutrimate";
+    private static final String USER = "root";
+    private static final String PASSWORD = ""; // Isikan password mysql kamu jika ada
+    
+    public static Connection getKoneksi() {
+        Connection conn = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Koneksi Database Gagal: " + e.getMessage());
+        }
+        return conn;
+    }
+}
