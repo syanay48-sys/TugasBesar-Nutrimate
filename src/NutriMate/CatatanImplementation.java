@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CatatanImplementation implements CatatanInterface {
+
     private static List<CatatanMakanan> catatanDatabase = new ArrayList<>();
     private static int autoIncrementId = 1;
     private MakananInterface makananInterface;
@@ -21,17 +22,17 @@ public class CatatanImplementation implements CatatanInterface {
             System.out.println("[CatatanInterface] Gagal tambah: makanan ID=" + catatan.getMakananId() + " tidak ditemukan.");
             return false;
         }
-        
+
         catatan.setTotalKalori(makanan.getKaloriPerPorsi() * catatan.getJumlahPorsi());
         catatan.setTotalKarbohidrat(makanan.getKarbohidrat() * catatan.getJumlahPorsi());
         catatan.setTotalProtein(makanan.getProtein() * catatan.getJumlahPorsi());
         catatan.setTotalLemak(makanan.getLemak() * catatan.getJumlahPorsi());
-        
+
         catatan.setNamaMakanan(makanan.getNamaMakanan());
         catatan.setKategoriMakanan(makanan.getKategori());
         catatan.setCatatanId(autoIncrementId++);
         catatanDatabase.add(catatan);
-        
+
         System.out.printf("[CatatanInterface] Catatan ditambahkan: %s (%.1f porsi = %.0f kkal)%n",
                 makanan.getNamaMakanan(), catatan.getJumlahPorsi(), catatan.getTotalKalori());
         return true;
@@ -48,9 +49,9 @@ public class CatatanImplementation implements CatatanInterface {
     @Override
     public List<CatatanMakanan> getCatatanByRentang(int userId, LocalDate dari, LocalDate sampai) {
         return catatanDatabase.stream()
-                .filter(c -> c.getUserId() == userId &&
-                        !c.getTanggal().isBefore(dari) &&
-                        !c.getTanggal().isAfter(sampai))
+                .filter(c -> c.getUserId() == userId
+                && !c.getTanggal().isBefore(dari)
+                && !c.getTanggal().isAfter(sampai))
                 .collect(Collectors.toList());
     }
 

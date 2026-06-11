@@ -5,16 +5,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MakananImplementation implements MakananInterface {
+
     private static List<MakananEntity> makananDatabase = new ArrayList<>();
     private static int autoIncrementId = 1;
 
     static {
-        makananDatabase.add(new MakananEntity(autoIncrementId++, "Nasi Putih",      200, 45.0, 4.0,  0.5, "Karbohidrat"));
-        makananDatabase.add(new MakananEntity(autoIncrementId++, "Telur Dadar",     150, 1.0,  10.0, 12.0, "Protein"));
-        makananDatabase.add(new MakananEntity(autoIncrementId++, "Ayam Panggang",   250, 0.0,  30.0, 14.0, "Protein"));
-        makananDatabase.add(new MakananEntity(autoIncrementId++, "Oatmeal",         180, 32.0, 6.0,  3.0, "Karbohidrat"));
-        makananDatabase.add(new MakananEntity(autoIncrementId++, "Apel",             80, 21.0, 0.4,  0.2, "Buah"));
-        makananDatabase.add(new MakananEntity(autoIncrementId++, "Susu Low Fat",    120, 12.0, 8.0,  2.5, "Minuman"));
+        makananDatabase.add(new MakananEntity(autoIncrementId++, "Nasi Putih", 200, 45.0, 4.0, 0.5, "Karbohidrat"));
+        makananDatabase.add(new MakananEntity(autoIncrementId++, "Telur Dadar", 150, 1.0, 10.0, 12.0, "Protein"));
+        makananDatabase.add(new MakananEntity(autoIncrementId++, "Ayam Panggang", 250, 0.0, 30.0, 14.0, "Protein"));
+        makananDatabase.add(new MakananEntity(autoIncrementId++, "Oatmeal", 180, 32.0, 6.0, 3.0, "Karbohidrat"));
+        makananDatabase.add(new MakananEntity(autoIncrementId++, "Apel", 80, 21.0, 0.4, 0.2, "Buah"));
+        makananDatabase.add(new MakananEntity(autoIncrementId++, "Susu Low Fat", 120, 12.0, 8.0, 2.5, "Minuman"));
         makananDatabase.add(new MakananEntity(autoIncrementId++, "Nasi + Ayam + Sayur", 600, 70.0, 35.0, 15.0, "Paket"));
     }
 

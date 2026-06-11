@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserImplementation implements UserInterface {
+
     private static List<UserEntity> userDatabase = new ArrayList<>();
     private static int autoIncrementId = 1;
 
     static {
         UserEntity demoUser = new UserEntity(
-            autoIncrementId++, "andi", "andi123", "Andi",
-            25, "Laki-laki", 70.0, 170.0,
-            "Sedang (3-5 hari/minggu)", "Menurunkan Berat Badan", 2000.0
+                autoIncrementId++, "andi", "andi123", "Andi",
+                25, "Laki-laki", 70.0, 170.0,
+                "Sedang (3-5 hari/minggu)", "Menurunkan Berat Badan", 2000.0
         );
         userDatabase.add(demoUser);
     }
@@ -45,7 +46,9 @@ public class UserImplementation implements UserInterface {
     @Override
     public UserEntity getProfil(int userId) {
         for (UserEntity u : userDatabase) {
-            if (u.getUserId() == userId) return u;
+            if (u.getUserId() == userId) {
+                return u;
+            }
         }
         System.out.println("[UserService] Pengguna dengan ID " + userId + " tidak ditemukan.");
         return null;

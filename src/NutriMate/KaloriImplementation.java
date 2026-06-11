@@ -1,11 +1,12 @@
 package NutriMate;
 
-public class KaloriImplementation implements KaloriInterface{
+public class KaloriImplementation implements KaloriInterface {
+
     @Override
     public double hitungBMR(UserEntity user) {
         double bb = user.getBeratBadan();
         double tb = user.getTinggiBadan();
-        int    u  = user.getUmur();
+        int u = user.getUmur();
         double bmr;
         if ("Laki-laki".equalsIgnoreCase(user.getJenisKelamin())) {
             bmr = 88.362 + (13.397 * bb) + (4.799 * tb) - (5.677 * u);
@@ -27,7 +28,7 @@ public class KaloriImplementation implements KaloriInterface{
         } else if (level.contains("berat") || level.contains("6-7")) {
             faktor = 1.725;
         } else {
-            faktor = 1.200; 
+            faktor = 1.200;
         }
         double kebutuhan = Math.round(bmr * faktor);
         System.out.printf("[KaloriInterface] Kebutuhan kalori (aktivitas: %s, faktor: %.3f): %.0f kkal%n", aktivitas, faktor, kebutuhan);
@@ -39,11 +40,11 @@ public class KaloriImplementation implements KaloriInterface{
         double target;
         String tujuan = targetDiet.toLowerCase();
         if (tujuan.contains("turun") || tujuan.contains("menurunkan")) {
-            target = kebutuhanKalori - 500; 
+            target = kebutuhanKalori - 500;
         } else if (tujuan.contains("naik") || tujuan.contains("menaikkan")) {
-            target = kebutuhanKalori + 500; 
+            target = kebutuhanKalori + 500;
         } else {
-            target = kebutuhanKalori;       
+            target = kebutuhanKalori;
         }
         System.out.printf("[KaloriInterface] Target kalori (%s): %.0f kkal%n", targetDiet, target);
         return target;
