@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class CatatanImplementation implements CatatanInterface {
 
-    private static List<CatatanMakanan> catatanDatabase = new ArrayList<>();
+    private static List<CatatanMakanann> catatanDatabase = new ArrayList<>();
     private static int autoIncrementId = 1;
     private MakananInterface makananInterface;
 
@@ -16,7 +16,7 @@ public class CatatanImplementation implements CatatanInterface {
     }
 
     @Override
-    public boolean tambahCatatan(CatatanMakanan catatan) {
+    public boolean tambahCatatan(CatatanMakanann catatan) {
         MakananEntity makanan = makananInterface.getMakananById(catatan.getMakananId());
         if (makanan == null) {
             System.out.println("[CatatanInterface] Gagal tambah: makanan ID=" + catatan.getMakananId() + " tidak ditemukan.");
@@ -39,7 +39,7 @@ public class CatatanImplementation implements CatatanInterface {
     }
 
     @Override
-    public List<CatatanMakanan> getCatatanByTanggal(int userId, LocalDate tanggal) {
+    public List<CatatanMakanann> getCatatanByTanggal(int userId, LocalDate tanggal) {
         return catatanDatabase.stream()
                 .filter(c -> c.getUserId() == userId && c.getTanggal().equals(tanggal))
                 .sorted((a, b) -> a.getWaktuMakan().compareTo(b.getWaktuMakan()))
@@ -47,7 +47,7 @@ public class CatatanImplementation implements CatatanInterface {
     }
 
     @Override
-    public List<CatatanMakanan> getCatatanByRentang(int userId, LocalDate dari, LocalDate sampai) {
+    public List<CatatanMakanann> getCatatanByRentang(int userId, LocalDate dari, LocalDate sampai) {
         return catatanDatabase.stream()
                 .filter(c -> c.getUserId() == userId
                 && !c.getTanggal().isBefore(dari)
@@ -59,12 +59,12 @@ public class CatatanImplementation implements CatatanInterface {
     public double getTotalKaloriHarian(int userId, LocalDate tanggal) {
         return catatanDatabase.stream()
                 .filter(c -> c.getUserId() == userId && c.getTanggal().equals(tanggal))
-                .mapToDouble(CatatanMakanan::getTotalKalori)
+                .mapToDouble(CatatanMakanann::getTotalKalori)
                 .sum();
     }
 
     @Override
-    public boolean updateCatatan(CatatanMakanan catatan) {
+    public boolean updateCatatan(CatatanMakanann catatan) {
         for (int i = 0; i < catatanDatabase.size(); i++) {
             if (catatanDatabase.get(i).getCatatanId() == catatan.getCatatanId()) {
                 MakananEntity makanan = makananInterface.getMakananById(catatan.getMakananId());
