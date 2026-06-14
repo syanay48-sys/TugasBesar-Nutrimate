@@ -111,7 +111,7 @@ public class Main {
     }
 
     private static void tambahCatatanDemo(int userId, int makananId, LocalTime waktu, double porsi) {
-        CatatanMakanan catatan = new CatatanMakanan();
+        CatatanMakanann catatan = new CatatanMakanann();
         catatan.setUserId(userId);
         catatan.setMakananId(makananId);
         catatan.setTanggal(LocalDate.now());
