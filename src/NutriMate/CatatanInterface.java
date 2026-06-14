@@ -5,15 +5,15 @@ import java.util.List;
 
 public interface CatatanInterface {
 
-    boolean tambahCatatan(CatatanMakanan catatan);
+    boolean tambahCatatan(CatatanMakanann catatan);
 
-    List<CatatanMakanan> getCatatanByTanggal(int userId, LocalDate tanggal);
+    List<CatatanMakanann> getCatatanByTanggal(int userId, LocalDate tanggal);
 
-    List<CatatanMakanan> getCatatanByRentang(int userId, LocalDate dari, LocalDate sampai);
+    List<CatatanMakanann> getCatatanByRentang(int userId, LocalDate dari, LocalDate sampai);
 
     double getTotalKaloriHarian(int userId, LocalDate tanggal);
 
-    boolean updateCatatan(CatatanMakanan catatan);
+    boolean updateCatatan(CatatanMakanann catatan);
 
     boolean hapusCatatan(int catatanId);
 }
