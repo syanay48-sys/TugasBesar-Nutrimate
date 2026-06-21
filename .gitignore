@@ -1,0 +1,15 @@
+/dist/
+*.properties
+build/classes/.netbeans_update_resources
+*.class
+build/
+src/Minggu10/
+patient/
+nbproject/
+hasil_export.txt
+src/Minggu*/
+src/TugasMinggu*/
+patient/
+manifest.mf
+build.xml
+src/*ExceptionHandling.java
