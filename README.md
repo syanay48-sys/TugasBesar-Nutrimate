@@ -1,5 +1,6 @@
 # Progress Aplikasi Tugas Besar - NutriMate
 
+**Deskripsi Project**
 NutriMate adalah aplikasi diet tracker yang kami rancang untuk membantu pengguna 
 memantau pola makan, menghitung kalori harian, dan mencapai berat badan ideal. 
 NutriMate hadir sebagai sistem pendukung yang memandu perjalanan hidup sehat 
@@ -25,6 +26,11 @@ badan ideal melalui pemantauan gizi yang disiplin namun tetap fleksibel.
 * Lidya Arinda Putri - 25102010
 * Nadia Utami Dewi - 25102016
 
-## Komponen Proyek
-* **Source Code Java**: Berisi file JFrame Form dan class DAO (di dalam folder `src`).
-* **Database**: File ekspor struktur tabel dan data (`nutrimate.sql`).
+**Komponen OOP yang sudah terpenuhi: **
+• Enkapsulasi ✅
+• Inheritance ✅
+• Polimorphism ✅
+• Abstract & Interface ✅
+• Exception Handling ✅
+• File I/O ✅
+• GUI ✅
