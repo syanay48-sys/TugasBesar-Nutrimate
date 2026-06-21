@@ -1,10 +1,10 @@
 package NutriMate;
 
-public class RegisterFrame extends javax.swing.JFrame {
+public class Register extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterFrame.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Register.class.getName());
 
-    public RegisterFrame() {
+    public Register() {
         initComponents();
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -150,13 +150,8 @@ public class RegisterFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(14, 14, 14))))
+                        .addComponent(jLabel2)
+                        .addGap(14, 14, 14))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnRegister, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -183,7 +178,9 @@ public class RegisterFrame extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(lblLogo)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLogo))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -287,7 +284,7 @@ public class RegisterFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNamaActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        LoginFrame login = new LoginFrame();
+        Login login = new Login();
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
@@ -333,7 +330,7 @@ public class RegisterFrame extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Registrasi Berhasil! Silakan masuk menggunakan akun baru Anda.", "Sukses", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
             // Pindah kembali ke halaman login setelah daftar berhasil
-            new LoginFrame().setVisible(true);
+            new Login().setVisible(true);
             this.dispose();
 
         } catch (java.sql.SQLException e) {
@@ -367,7 +364,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RegisterFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Register().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

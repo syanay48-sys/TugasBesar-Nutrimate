@@ -13,7 +13,7 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         this.setResizable(false);
-        this.setSize(1280, 720);
+        this.setSize(1100, 650);
         this.setLocationRelativeTo(null);
         this.inisialisasiTabelMakanan();
         this.hitungKaloriOtomatis();
@@ -39,15 +39,16 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         btnDashboard = new javax.swing.JButton();
-        btnProfil = new javax.swing.JButton();
+        btnProfilSaya = new javax.swing.JButton();
         btnHitungKalori = new javax.swing.JButton();
         btnCatatanMakanan = new javax.swing.JButton();
         btnDaftarMakanan = new javax.swing.JButton();
-        btnLaporan = new javax.swing.JButton();
         btnPengaturan = new javax.swing.JButton();
         btnKeluar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        btnLaporan = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -88,7 +89,6 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
-        panelSidebar = new javax.swing.JPanel();
 
         jLabel24.setText("jLabel24");
 
@@ -123,8 +123,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel50.setText("jLabel50");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Dashboard - Nutrimate");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setTitle("NutriMate - Dashboard");
 
         jPanel1.setBackground(new java.awt.Color(44, 62, 80));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,51 +137,46 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setText("Selamat Datang Kembali!");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 150, -1));
 
-        btnDashboard.setBackground(new java.awt.Color(102, 0, 204));
-        btnDashboard.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnDashboard.setForeground(new java.awt.Color(255, 255, 255));
-        btnDashboard.setText(" Dashboard");
-        btnDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnDashboardMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnDashboardMouseExited(evt);
-            }
-        });
-        btnDashboard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDashboardActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 180, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NutriMate/Desain tanpa judul (2).png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 100, 90));
 
-        btnProfil.setBackground(new java.awt.Color(102, 0, 204));
-        btnProfil.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnProfil.setForeground(new java.awt.Color(255, 255, 255));
-        btnProfil.setText("Profil Saya");
-        btnProfil.setBorderPainted(false);
-        btnProfil.setContentAreaFilled(false);
-        btnProfil.setFocusPainted(false);
-        btnProfil.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel38.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel38.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText(" ");
+        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 20, 20));
+
+        btnDashboard.setBackground(new java.awt.Color(102, 0, 204));
+        btnDashboard.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnDashboard.setForeground(new java.awt.Color(255, 255, 255));
+        btnDashboard.setText("🏠  Dashboard");
+        jPanel1.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, -1));
+
+        btnProfilSaya.setBackground(new java.awt.Color(102, 0, 204));
+        btnProfilSaya.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnProfilSaya.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfilSaya.setText("👤  Profil Saya");
+        btnProfilSaya.setBorderPainted(false);
+        btnProfilSaya.setContentAreaFilled(false);
+        btnProfilSaya.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnProfilMouseEntered(evt);
+                btnProfilSayaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnProfilMouseExited(evt);
+                btnProfilSayaMouseExited(evt);
             }
         });
-        btnProfil.addActionListener(new java.awt.event.ActionListener() {
+        btnProfilSaya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfilActionPerformed(evt);
+                btnProfilSayaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 180, -1));
+        jPanel1.add(btnProfilSaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 190, -1));
 
         btnHitungKalori.setBackground(new java.awt.Color(102, 0, 204));
-        btnHitungKalori.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHitungKalori.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         btnHitungKalori.setForeground(new java.awt.Color(255, 255, 255));
-        btnHitungKalori.setText("   Hitung Kalori");
+        btnHitungKalori.setText("📈  Hitung Kalori");
         btnHitungKalori.setBorderPainted(false);
         btnHitungKalori.setContentAreaFilled(false);
         btnHitungKalori.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -198,12 +192,12 @@ public class Dashboard extends javax.swing.JFrame {
                 btnHitungKaloriActionPerformed(evt);
             }
         });
-        jPanel1.add(btnHitungKalori, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 180, -1));
+        jPanel1.add(btnHitungKalori, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 190, -1));
 
         btnCatatanMakanan.setBackground(new java.awt.Color(102, 0, 204));
-        btnCatatanMakanan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCatatanMakanan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         btnCatatanMakanan.setForeground(new java.awt.Color(255, 255, 255));
-        btnCatatanMakanan.setText("CatatanMakanan");
+        btnCatatanMakanan.setText("📝  Catatan Makanan");
         btnCatatanMakanan.setBorderPainted(false);
         btnCatatanMakanan.setContentAreaFilled(false);
         btnCatatanMakanan.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -219,14 +213,15 @@ public class Dashboard extends javax.swing.JFrame {
                 btnCatatanMakananActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCatatanMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 180, -1));
+        jPanel1.add(btnCatatanMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 190, -1));
 
         btnDaftarMakanan.setBackground(new java.awt.Color(102, 0, 204));
-        btnDaftarMakanan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnDaftarMakanan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         btnDaftarMakanan.setForeground(new java.awt.Color(255, 255, 255));
-        btnDaftarMakanan.setText("DaftarMakanan");
+        btnDaftarMakanan.setText("📁  Daftar Makanan");
         btnDaftarMakanan.setBorderPainted(false);
         btnDaftarMakanan.setContentAreaFilled(false);
+        btnDaftarMakanan.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnDaftarMakanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDaftarMakananMouseEntered(evt);
@@ -240,34 +235,15 @@ public class Dashboard extends javax.swing.JFrame {
                 btnDaftarMakananActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDaftarMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, -1));
-
-        btnLaporan.setBackground(new java.awt.Color(102, 0, 204));
-        btnLaporan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnLaporan.setForeground(new java.awt.Color(255, 255, 255));
-        btnLaporan.setText("Laporan");
-        btnLaporan.setBorderPainted(false);
-        btnLaporan.setContentAreaFilled(false);
-        btnLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnLaporanMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnLaporanMouseExited(evt);
-            }
-        });
-        jPanel1.add(btnLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 180, -1));
+        jPanel1.add(btnDaftarMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 190, -1));
 
         btnPengaturan.setBackground(new java.awt.Color(102, 0, 204));
-        btnPengaturan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnPengaturan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         btnPengaturan.setForeground(new java.awt.Color(255, 255, 255));
-        btnPengaturan.setText("Pengaturan");
+        btnPengaturan.setText("⚙  Pengaturan");
         btnPengaturan.setBorderPainted(false);
         btnPengaturan.setContentAreaFilled(false);
         btnPengaturan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPengaturanMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnPengaturanMouseEntered(evt);
             }
@@ -275,12 +251,17 @@ public class Dashboard extends javax.swing.JFrame {
                 btnPengaturanMouseExited(evt);
             }
         });
-        jPanel1.add(btnPengaturan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 180, -1));
+        btnPengaturan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPengaturanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnPengaturan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 190, -1));
 
-        btnKeluar.setBackground(new java.awt.Color(102, 0, 204));
-        btnKeluar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnKeluar.setBackground(new java.awt.Color(192, 57, 43));
+        btnKeluar.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
         btnKeluar.setForeground(new java.awt.Color(255, 255, 255));
-        btnKeluar.setText("Keluar");
+        btnKeluar.setText("🔓  Keluar");
         btnKeluar.setBorderPainted(false);
         btnKeluar.setContentAreaFilled(false);
         btnKeluar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -296,12 +277,28 @@ public class Dashboard extends javax.swing.JFrame {
                 btnKeluarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 180, -1));
+        jPanel1.add(btnKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 190, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NutriMate/Desain tanpa judul (2).png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 100, 90));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, -14, 200, 700));
+        btnLaporan.setBackground(new java.awt.Color(102, 0, 204));
+        btnLaporan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnLaporan.setForeground(new java.awt.Color(255, 255, 255));
+        btnLaporan.setText("📚  Laporan");
+        btnLaporan.setBorderPainted(false);
+        btnLaporan.setContentAreaFilled(false);
+        btnLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLaporanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLaporanMouseExited(evt);
+            }
+        });
+        btnLaporan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLaporanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 190, -1));
 
         jPanel5.setBackground(new java.awt.Color(255, 204, 255));
 
@@ -351,8 +348,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addGap(50, 50, 50))
         );
-
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 41, 180, 80));
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -405,8 +400,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 40, 190, 81));
-
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -426,8 +419,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 255, 102));
         jLabel4.setText("🎯");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 70, 60));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 180, 81));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 204));
 
@@ -482,8 +473,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 41, 190, 80));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -569,8 +558,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(0, 42, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 130, 420, 260));
-
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -596,7 +583,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel32)
                     .addComponent(panelBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,8 +594,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(panelBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 370, 260));
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -642,10 +627,9 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel33)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(jLabel33)
+                .addContainerGap(613, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -657,107 +641,123 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(90, 90, 90))
         );
 
-        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 800, 190));
-
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setText("Dashboard");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 130, 40));
 
-        javax.swing.GroupLayout panelSidebarLayout = new javax.swing.GroupLayout(panelSidebar);
-        panelSidebar.setLayout(panelSidebarLayout);
-        panelSidebarLayout.setHorizontalGroup(
-            panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 615, Short.MAX_VALUE)
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
-        panelSidebarLayout.setVerticalGroup(
-            panelSidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
         );
-
-        getContentPane().add(panelSidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 79, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDashboardActionPerformed
+    }//GEN-LAST:event_jTable1MouseClicked
 
-    private void btnProfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilMouseEntered
-        btnProfil.setContentAreaFilled(true);
-        btnProfil.setBorderPainted(true);
-        btnProfil.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnProfilMouseEntered
-
-    private void btnProfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilMouseExited
-        btnProfil.setContentAreaFilled(false);
-        btnProfil.setBorderPainted(false);
-    }//GEN-LAST:event_btnProfilMouseExited
-
-    private void btnProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfilActionPerformed
+    private void btnLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaporanActionPerformed
+        new Laporan().setVisible(true);
         this.dispose();
-        GuiProfilFiks profil = new GuiProfilFiks();
-        profil.setVisible(true);
-        profil.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnProfilActionPerformed
+    }//GEN-LAST:event_btnLaporanActionPerformed
 
-    private void btnCatatanMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatatanMakananActionPerformed
+    private void btnLaporanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLaporanMouseExited
+        btnLaporan.setContentAreaFilled(false);
+        btnLaporan.setBorderPainted(false);
+    }//GEN-LAST:event_btnLaporanMouseExited
+
+    private void btnLaporanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLaporanMouseEntered
+        btnLaporan.setContentAreaFilled(true);
+        btnLaporan.setBorderPainted(true);
+        btnLaporan.setBackground(new java.awt.Color(102, 0, 204));
+        btnLaporan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnLaporanMouseEntered
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         this.dispose();
-        CatatanMakanan catatan = new CatatanMakanan();
-        catatan.setVisible(true);
-        catatan.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnCatatanMakananActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnKeluarActionPerformed
 
-    private void btnDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseEntered
-        btnDashboard.setContentAreaFilled(true);
-        btnDashboard.setBorderPainted(true);
-        btnDashboard.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnDashboardMouseEntered
+    private void btnKeluarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseExited
+        btnKeluar.setContentAreaFilled(false);
+        btnKeluar.setBorderPainted(false);
+    }//GEN-LAST:event_btnKeluarMouseExited
 
-    private void btnDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseExited
-        btnDashboard.setContentAreaFilled(false);
-        btnDashboard.setBorderPainted(false);
-    }//GEN-LAST:event_btnDashboardMouseExited
+    private void btnKeluarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseEntered
+        btnKeluar.setContentAreaFilled(true);
+        btnKeluar.setBorderPainted(true);
+        btnKeluar.setBackground(new java.awt.Color(192, 57, 43));
+        btnKeluar.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnKeluarMouseEntered
 
-    private void btnHitungKaloriMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungKaloriMouseEntered
-        btnHitungKalori.setContentAreaFilled(true);
-        btnHitungKalori.setBorderPainted(true);
-        btnHitungKalori.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnHitungKaloriMouseEntered
-
-    private void btnHitungKaloriMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungKaloriMouseExited
-        btnHitungKalori.setContentAreaFilled(false);
-        btnHitungKalori.setBorderPainted(false);
-    }//GEN-LAST:event_btnHitungKaloriMouseExited
-
-    private void btnHitungKaloriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungKaloriActionPerformed
+    private void btnPengaturanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPengaturanActionPerformed
+        new Pengaturan().setVisible(true);
         this.dispose();
-        KalkulatorKalori1 kalori = new KalkulatorKalori1();
-        kalori.setVisible(true);
-        kalori.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnHitungKaloriActionPerformed
+    }//GEN-LAST:event_btnPengaturanActionPerformed
 
-    private void btnCatatanMakananMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatatanMakananMouseEntered
-        btnCatatanMakanan.setContentAreaFilled(true);
-        btnCatatanMakanan.setBorderPainted(true);
-        btnCatatanMakanan.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnCatatanMakananMouseEntered
+    private void btnPengaturanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseExited
+        btnPengaturan.setContentAreaFilled(false);
+        btnPengaturan.setBorderPainted(false);
+    }//GEN-LAST:event_btnPengaturanMouseExited
 
-    private void btnCatatanMakananMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatatanMakananMouseExited
-        btnCatatanMakanan.setContentAreaFilled(false);
-        btnCatatanMakanan.setBorderPainted(false);
-    }//GEN-LAST:event_btnCatatanMakananMouseExited
-
-    private void btnDaftarMakananMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaftarMakananMouseEntered
-        btnDaftarMakanan.setContentAreaFilled(true);
-        btnDaftarMakanan.setBorderPainted(true);
-        btnDaftarMakanan.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnDaftarMakananMouseEntered
-
-    private void btnDaftarMakananMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaftarMakananMouseExited
-        btnDaftarMakanan.setContentAreaFilled(false);
-        btnDaftarMakanan.setBorderPainted(false);
-    }//GEN-LAST:event_btnDaftarMakananMouseExited
+    private void btnPengaturanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseEntered
+        btnPengaturan.setContentAreaFilled(true);
+        btnPengaturan.setBorderPainted(true);
+        btnPengaturan.setBackground(new java.awt.Color(102, 0, 204));
+        btnPengaturan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnPengaturanMouseEntered
 
     private void btnDaftarMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarMakananActionPerformed
         this.dispose();
@@ -766,107 +766,118 @@ public class Dashboard extends javax.swing.JFrame {
         daftar.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnDaftarMakananActionPerformed
 
-    private void btnLaporanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLaporanMouseEntered
-        btnLaporan.setContentAreaFilled(true);
-        btnLaporan.setBorderPainted(true);
-        btnLaporan.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnLaporanMouseEntered
+    private void btnDaftarMakananMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaftarMakananMouseExited
+        btnDaftarMakanan.setContentAreaFilled(false);
+        btnDaftarMakanan.setBorderPainted(false);
+    }//GEN-LAST:event_btnDaftarMakananMouseExited
 
-    private void btnLaporanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLaporanMouseExited
-        btnLaporan.setContentAreaFilled(false);
-        btnLaporan.setBorderPainted(false);
-    }//GEN-LAST:event_btnLaporanMouseExited
+    private void btnDaftarMakananMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaftarMakananMouseEntered
+        btnDaftarMakanan.setContentAreaFilled(true);
+        btnDaftarMakanan.setBorderPainted(true);
+        btnDaftarMakanan.setBackground(new java.awt.Color(102, 0, 204));
+        btnDaftarMakanan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnDaftarMakananMouseEntered
 
-    private void btnPengaturanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPengaturanMouseClicked
-
-    private void btnPengaturanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseEntered
-        btnPengaturan.setContentAreaFilled(true);
-        btnPengaturan.setBorderPainted(true);
-        btnPengaturan.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnPengaturanMouseEntered
-
-    private void btnPengaturanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseExited
-        btnPengaturan.setContentAreaFilled(false);
-        btnPengaturan.setBorderPainted(false);
-    }//GEN-LAST:event_btnPengaturanMouseExited
-
-    private void btnKeluarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseEntered
-        btnKeluar.setContentAreaFilled(true);
-        btnKeluar.setBorderPainted(true);
-        btnKeluar.setBackground(new java.awt.Color(102, 0, 204));
-    }//GEN-LAST:event_btnKeluarMouseEntered
-
-    private void btnKeluarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseExited
-        btnKeluar.setContentAreaFilled(false);
-        btnKeluar.setBorderPainted(false);
-    }//GEN-LAST:event_btnKeluarMouseExited
-
-    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+    private void btnCatatanMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatatanMakananActionPerformed
         this.dispose();
-        LoginFrame login = new LoginFrame();
-        login.setVisible(true);
-        login.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnKeluarActionPerformed
+        CatatanMakanan catatan = new CatatanMakanan();
+        catatan.setVisible(true);
+        catatan.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCatatanMakananActionPerformed
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1MouseClicked
+    private void btnCatatanMakananMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatatanMakananMouseExited
+        btnCatatanMakanan.setContentAreaFilled(false);
+        btnCatatanMakanan.setBorderPainted(false);
+    }//GEN-LAST:event_btnCatatanMakananMouseExited
 
-   private void hitungKaloriOtomatis() {
-    try {
-        // Ambil data user dari session asli kamu
-        String nama = NutriMate.UserDataSession.namaUser;
-        double target = NutriMate.UserDataSession.targetKalori;
-        double berat = NutriMate.UserDataSession.beratBadan;
+    private void btnCatatanMakananMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatatanMakananMouseEntered
+        btnCatatanMakanan.setContentAreaFilled(true);
+        btnCatatanMakanan.setBorderPainted(true);
+        btnCatatanMakanan.setBackground(new java.awt.Color(102, 0, 204));
+        btnCatatanMakanan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnCatatanMakananMouseEntered
 
-        // Set teks header dan berat badan (Sesuai label asli kamu agar tidak double)
-        jLabel1.setText("Halo, " + nama);
-        jLabel13.setText(String.format("%,.0f", target).replace(",", "."));
-        jLabel22.setText(String.format("%.0f", berat)); // Mengatur angka berat badan asli tanpa bikin kembar
+    private void btnHitungKaloriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungKaloriActionPerformed
+        this.dispose();
+        KalkulatorKalori1 kalori = new KalkulatorKalori1();
+        kalori.setVisible(true);
+        kalori.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnHitungKaloriActionPerformed
 
-        // Hitung kalori masuk dari tabel makanan
-        double kaloriMasuk = 0;
-        if (jLabel16 != null && jLabel16.getText() != null && !jLabel16.getText().isEmpty()) {
-            kaloriMasuk = Double.parseDouble(jLabel16.getText().replace(".", ""));
+    private void btnHitungKaloriMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungKaloriMouseExited
+        btnHitungKalori.setContentAreaFilled(false);
+        btnHitungKalori.setBorderPainted(false);
+    }//GEN-LAST:event_btnHitungKaloriMouseExited
+
+    private void btnHitungKaloriMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungKaloriMouseEntered
+        btnHitungKalori.setContentAreaFilled(true);
+        btnHitungKalori.setBorderPainted(true);
+        btnHitungKalori.setBackground(new java.awt.Color(102, 0, 204));
+    }//GEN-LAST:event_btnHitungKaloriMouseEntered
+
+    private void btnProfilSayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfilSayaActionPerformed
+        new ProfilSaya().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnProfilSayaActionPerformed
+
+    private void btnProfilSayaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilSayaMouseExited
+        btnProfilSaya.setContentAreaFilled(false);
+        btnProfilSaya.setBorderPainted(false);
+    }//GEN-LAST:event_btnProfilSayaMouseExited
+
+    private void btnProfilSayaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilSayaMouseEntered
+        btnProfilSaya.setContentAreaFilled(true);
+        btnProfilSaya.setBorderPainted(true);
+        btnProfilSaya.setBackground(new java.awt.Color(102, 0, 204));
+        btnProfilSaya.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnProfilSayaMouseEntered
+
+    private void hitungKaloriOtomatis() {
+        try {
+
+            String nama = NutriMate.UserDataSession.namaUser;
+            double target = NutriMate.UserDataSession.targetKalori;
+            double berat = NutriMate.UserDataSession.beratBadan;
+
+            jLabel1.setText("Halo, " + nama);
+            jLabel13.setText(String.format("%,.0f", target).replace(",", "."));
+            jLabel22.setText(String.format("%.0f", berat));
+
+            double kaloriMasuk = 0;
+            if (jLabel16 != null && jLabel16.getText() != null && !jLabel16.getText().isEmpty()) {
+                kaloriMasuk = Double.parseDouble(jLabel16.getText().replace(".", ""));
+            }
+
+            double sisaKalori = target - kaloriMasuk;
+            double persentase = (target > 0) ? (kaloriMasuk / target) * 100 : 0;
+
+            jLabel19.setText(String.format("%,.0f", sisaKalori).replace(",", "."));
+            jLabel26.setText("Kalori Masuk   " + String.format("%.0f", kaloriMasuk) + " / " + String.format("%.0f", target) + " kkal");
+            jLabel27.setText(String.format("%.0f%%", persentase));
+
+            int progressVal = (int) persentase;
+            if (progressVal > 100) {
+                progressVal = 100;
+            }
+            jProgressBar1.setValue(progressVal);
+
+            double kaloriKarbo = kaloriMasuk * 0.45;
+            double kaloriProtein = kaloriMasuk * 0.25;
+            double kaloriLemak = kaloriMasuk * 0.30;
+
+            double gramKarbo = kaloriKarbo / 4;
+            double gramProtein = kaloriProtein / 4;
+            double gramLemak = kaloriLemak / 9;
+
+            jLabel28.setText(String.format("🩵 Karbohidrat 45%% (%.0fg)", gramKarbo));
+            jLabel29.setText(String.format("🩵 Protein 25%% (%.0fg)", gramProtein));
+            jLabel31.setText(String.format("🩵 Lemak 30%% (%.0fg)", gramLemak));
+
+        } catch (Exception e) {
+
+            logger.log(java.util.logging.Level.WARNING, "Gagal sinkronisasi dashboard: " + e.getMessage());
         }
-        
-        double sisaKalori = target - kaloriMasuk;
-        double persentase = (target > 0) ? (kaloriMasuk / target) * 100 : 0;
-
-        // Update sisa kalori, text, dan progress bar
-        jLabel19.setText(String.format("%,.0f", sisaKalori).replace(",", "."));
-        jLabel26.setText("Kalori Masuk   " + String.format("%.0f", kaloriMasuk) + " / " + String.format("%.0f", target) + " kkal");
-        jLabel27.setText(String.format("%.0f%%", persentase));
-
-        int progressVal = (int) persentase;
-        if (progressVal > 100) {
-            progressVal = 100;
-        }
-        jProgressBar1.setValue(progressVal);
-
-        // =========================================================================
-        // TAMBAHAN: HITUNG GRAM MAKRONUTRISI OTOMATIS BIAR MUNCUL DI SEBELAH GRAFIK
-        // =========================================================================
-        double kaloriKarbo = kaloriMasuk * 0.45;
-        double kaloriProtein = kaloriMasuk * 0.25;
-        double kaloriLemak = kaloriMasuk * 0.30;
-        
-        double gramKarbo = kaloriKarbo / 4;
-        double gramProtein = kaloriProtein / 4;
-        double gramLemak = kaloriLemak / 9;
-        
-        // Update label keterangan di sebelah grafik donut kamu
-        jLabel28.setText(String.format("🩵 Karbohidrat 45%% (%.0fg)", gramKarbo));
-        jLabel29.setText(String.format("🩵 Protein 25%% (%.0fg)", gramProtein));
-        jLabel31.setText(String.format("🩵 Lemak 30%% (%.0fg)", gramLemak));
-
-    } catch (Exception e) {
-        // Menggunakan logger bawaan class kamu agar tidak merah
-        logger.log(java.util.logging.Level.WARNING, "Gagal sinkronisasi dashboard: " + e.getMessage());
     }
-}
 
     private void inisialisasiTabelMakanan() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -896,83 +907,73 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void tampilkanGrafik() {
         try {
-        // 1. MEMBUAT GRAFIK DONUT MANUAL (Makronutrisi)
-        panelDonut.setLayout(new java.awt.BorderLayout());
-        javax.swing.JPanel grafikDonutManual = new javax.swing.JPanel() {
-            @Override
-            protected void paintComponent(java.awt.Graphics g) {
-                super.paintComponent(g);
-                java.awt.Graphics2D g2d = (java.awt.Graphics2D) g;
-                g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Warna background putih bersih
-                g2d.setColor(java.awt.Color.WHITE);
-                g2d.fillRect(0, 0, getWidth(), getHeight());
-                
-                // Gambar Lingkaran Donut (Karbohidrat 45%, Protein 25%, Lemak 30%)
-                g2d.setColor(new java.awt.Color(52, 152, 219)); // Biru - Karbo
-                g2d.fillArc(10, 10, 100, 100, 0, 162); 
-                g2d.setColor(new java.awt.Color(46, 204, 113)); // Hijau - Protein
-                g2d.fillArc(10, 10, 100, 100, 162, 90);
-                g2d.setColor(new java.awt.Color(241, 196, 15)); // Kuning - Lemak
-                g2d.fillArc(10, 10, 100, 100, 252, 108);
-                
-                // Lubang tengah biar jadi bentuk cincin/donut
-                g2d.setColor(java.awt.Color.WHITE);
-                g2d.fillOval(40, 40, 40, 40);
-            }
-        };
-        
-        // KUNCI UKURAN PANEL DI SINI BIAR GAK JADI 0 PIXEL
-        grafikDonutManual.setPreferredSize(new java.awt.Dimension(panelDonut.getWidth(), panelDonut.getHeight()));
-        grafikDonutManual.setBackground(java.awt.Color.WHITE);
-        panelDonut.add(grafikDonutManual, java.awt.BorderLayout.CENTER);
 
-        // 2. MEMBUAT GRAFIK BATANG MANUAL (Riwayat 7 Hari)
-        panelBar.setLayout(new java.awt.BorderLayout());
-        javax.swing.JPanel grafikBarManual = new javax.swing.JPanel() {
-            @Override
-            protected void paintComponent(java.awt.Graphics g) {
-                super.paintComponent(g);
-                java.awt.Graphics2D g2d = (java.awt.Graphics2D) g;
-                g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                g2d.setColor(java.awt.Color.WHITE);
-                g2d.fillRect(0, 0, getWidth(), getHeight());
-                
-                // Data tinggi batang kalori seminggu (Senin - Minggu)
-                int[] dataKalori = {80, 95, 85, 60, 20, 10, 40}; 
-                String[] hari = {"S", "S", "R", "K", "J", "S", "M"};
-                
-                for (int i = 0; i < dataKalori.length; i++) {
-                    int x = 20 + (i * 45);
-                    int y = 160 - dataKalori[i];
-                    
-                    // Gambar batang ungu
-                    g2d.setColor(new java.awt.Color(155, 89, 182));
-                    g2d.fillRect(x, y, 25, dataKalori[i]);
-                    
-                    // Gambar huruf hari di bawahnya
-                    g2d.setColor(java.awt.Color.DARK_GRAY);
-                    g2d.drawString(hari[i], x + 8, 180);
+            panelDonut.setLayout(new java.awt.BorderLayout());
+            javax.swing.JPanel grafikDonutManual = new javax.swing.JPanel() {
+                @Override
+                protected void paintComponent(java.awt.Graphics g) {
+                    super.paintComponent(g);
+                    java.awt.Graphics2D g2d = (java.awt.Graphics2D) g;
+                    g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+
+                    g2d.setColor(java.awt.Color.WHITE);
+                    g2d.fillRect(0, 0, getWidth(), getHeight());
+
+                    g2d.setColor(new java.awt.Color(52, 152, 219)); // Biru - Karbo
+                    g2d.fillArc(10, 10, 100, 100, 0, 162);
+                    g2d.setColor(new java.awt.Color(46, 204, 113)); // Hijau - Protein
+                    g2d.fillArc(10, 10, 100, 100, 162, 90);
+                    g2d.setColor(new java.awt.Color(241, 196, 15)); // Kuning - Lemak
+                    g2d.fillArc(10, 10, 100, 100, 252, 108);
+
+                    g2d.setColor(java.awt.Color.WHITE);
+                    g2d.fillOval(40, 40, 40, 40);
                 }
-            }
-        };
-        
-        // KUNCI UKURAN PANEL DI SINI BIAR GAK JADI 0 PIXEL
-        grafikBarManual.setPreferredSize(new java.awt.Dimension(panelBar.getWidth(), panelBar.getHeight()));
-        grafikBarManual.setBackground(java.awt.Color.WHITE);
-        panelBar.add(grafikBarManual, java.awt.BorderLayout.CENTER);
-        
-        // REFRESH TOTAL DAN PAKSA MUNCULKAN
-        panelDonut.revalidate();
-        panelDonut.repaint();
-        panelBar.revalidate();
-        panelBar.repaint();
-        
-    } catch (Exception e) {
-        System.out.println("Gagal gambar: " + e.getMessage());
-    }
+            };
+
+            grafikDonutManual.setPreferredSize(new java.awt.Dimension(panelDonut.getWidth(), panelDonut.getHeight()));
+            grafikDonutManual.setBackground(java.awt.Color.WHITE);
+            panelDonut.add(grafikDonutManual, java.awt.BorderLayout.CENTER);
+
+            panelBar.setLayout(new java.awt.BorderLayout());
+            javax.swing.JPanel grafikBarManual = new javax.swing.JPanel() {
+                @Override
+                protected void paintComponent(java.awt.Graphics g) {
+                    super.paintComponent(g);
+                    java.awt.Graphics2D g2d = (java.awt.Graphics2D) g;
+                    g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+
+                    g2d.setColor(java.awt.Color.WHITE);
+                    g2d.fillRect(0, 0, getWidth(), getHeight());
+
+                    int[] dataKalori = {80, 95, 85, 60, 20, 10, 40};
+                    String[] hari = {"S", "S", "R", "K", "J", "S", "M"};
+
+                    for (int i = 0; i < dataKalori.length; i++) {
+                        int x = 20 + (i * 45);
+                        int y = 160 - dataKalori[i];
+
+                        g2d.setColor(new java.awt.Color(155, 89, 182));
+                        g2d.fillRect(x, y, 25, dataKalori[i]);
+
+                        g2d.setColor(java.awt.Color.DARK_GRAY);
+                        g2d.drawString(hari[i], x + 8, 180);
+                    }
+                }
+            };
+
+            grafikBarManual.setPreferredSize(new java.awt.Dimension(panelBar.getWidth(), panelBar.getHeight()));
+            grafikBarManual.setBackground(java.awt.Color.WHITE);
+            panelBar.add(grafikBarManual, java.awt.BorderLayout.CENTER);
+
+            panelDonut.revalidate();
+            panelDonut.repaint();
+            panelBar.revalidate();
+            panelBar.repaint();
+
+        } catch (Exception e) {
+            System.out.println("Gagal gambar: " + e.getMessage());
+        }
     }
 
     public static void main(String args[]) {
@@ -1005,7 +1006,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnLaporan;
     private javax.swing.JButton btnPengaturan;
-    private javax.swing.JButton btnProfil;
+    private javax.swing.JButton btnProfilSaya;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1033,6 +1034,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -1057,7 +1059,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel panelBar;
     private javax.swing.JPanel panelDonut;
-    private javax.swing.JPanel panelSidebar;
     // End of variables declaration//GEN-END:variables
 
 }

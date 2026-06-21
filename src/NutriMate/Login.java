@@ -1,14 +1,14 @@
 package NutriMate;
 
-public class LoginFrame extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginFrame.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
 
-    public LoginFrame() {
+    public Login() {
         initComponents();
         this.setLocationRelativeTo(null);  
  
-        java.util.prefs.Preferences prefs = java.util.prefs.Preferences.userNodeForPackage(LoginFrame.class);
+        java.util.prefs.Preferences prefs = java.util.prefs.Preferences.userNodeForPackage(Login.class);
         boolean remember = prefs.getBoolean("remember", false);
         if (remember) {
             txtUsername.setText(prefs.get("saved_user", ""));
@@ -83,7 +83,6 @@ public class LoginFrame extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(400, 500));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -254,7 +253,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        RegisterFrame registerForm = new RegisterFrame();
+        Register registerForm = new Register();
 
         registerForm.setVisible(true);
 
@@ -316,7 +315,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 NutriMate.UserDataSession.beratBadan = rs.getDouble("berat_badan");
 
                 // Logika Fitur "Ingat Saya" (Ganti 'chbIngatSaya' sesuai variabel JCheckBox kamu)
-                java.util.prefs.Preferences prefs = java.util.prefs.Preferences.userNodeForPackage(LoginFrame.class);
+                java.util.prefs.Preferences prefs = java.util.prefs.Preferences.userNodeForPackage(Login.class);
                 if (chbIngatSaya.isSelected()) {
                     prefs.put("saved_user", username);
                     prefs.put("saved_pass", password);
@@ -362,7 +361,7 @@ public class LoginFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new LoginFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

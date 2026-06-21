@@ -1,14 +1,25 @@
 package NutriMate;
 
-public class GuiProfilFiks extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GuiProfilFiks.class.getName());
+public class ProfilSaya extends javax.swing.JFrame {
 
-    public GuiProfilFiks() {
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ProfilSaya.class.getName());
+
+    /**
+     * Creates new form GuiProfil
+     */
+    public ProfilSaya() {
         initComponents();
+        this.setSize(1100, 650);
+        this.setResizable(false);
+        setLocationRelativeTo(null);
+        aktifkanHitungOtomatis();
+        aksiTombolSimpan();
         javax.swing.ImageIcon iconAsli = (javax.swing.ImageIcon) jLabel1.getIcon();
 
         if (iconAsli != null) {
+
             java.awt.Image gambar = iconAsli.getImage();
 
             java.awt.Image gambarBaru = gambar.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -34,33 +45,25 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        btnProfilSaya = new javax.swing.JButton();
+        btnDashboard = new javax.swing.JButton();
+        btnHitungKalori = new javax.swing.JButton();
+        btnCatatanMakanan = new javax.swing.JButton();
+        btnDaftarMakanan = new javax.swing.JButton();
+        btnLaporan = new javax.swing.JButton();
+        btnPengaturan = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtNama = new javax.swing.JTextField();
+        txtUmur = new javax.swing.JTextField();
+        cmbJenisKelamin = new javax.swing.JComboBox<>();
+        txtBerat = new javax.swing.JTextField();
+        txtTinggi = new javax.swing.JTextField();
+        cmbAktivitas = new javax.swing.JComboBox<>();
+        cmbTargetDiet = new javax.swing.JComboBox<>();
+        txtTargetKalori = new javax.swing.JTextField();
+        btnSimpanPerubahan = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -85,11 +88,11 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
+        lblKebutuhanHarian = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
+        lblBMRSummary = new javax.swing.JLabel();
+        lblAktivitasSummary = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -106,22 +109,22 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(44, 62, 80));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/coba/Desain tanpa judul (2).png"))); // NOI18N
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/NutriMate/Desain tanpa judul (2).png"))); // NOI18N
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Selamat datang kembali!");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Halo, Vira");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
-        jPanel5.setBackground(new java.awt.Color(102, 0, 153));
+        jPanel5.setBackground(new java.awt.Color(44, 62, 80));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -130,103 +133,165 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jLabel4.setText("🏠");
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("👤");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Profil Saya");
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, 30));
+        btnProfilSaya.setBackground(new java.awt.Color(102, 0, 204));
+        btnProfilSaya.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnProfilSaya.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfilSaya.setText("👤  Profil Saya");
+        btnProfilSaya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfilSayaActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnProfilSaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 10, 220, -1));
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 180, 30));
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 0, 22)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("📚");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        btnDashboard.setBackground(new java.awt.Color(102, 0, 204));
+        btnDashboard.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnDashboard.setForeground(new java.awt.Color(255, 255, 255));
+        btnDashboard.setText("🏠  Dashboard");
+        btnDashboard.setBorderPainted(false);
+        btnDashboard.setContentAreaFilled(false);
+        btnDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDashboardMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDashboardMouseExited(evt);
+            }
+        });
+        btnDashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDashboardActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 180, -1));
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("🏠");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        btnHitungKalori.setBackground(new java.awt.Color(102, 0, 204));
+        btnHitungKalori.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnHitungKalori.setForeground(new java.awt.Color(255, 255, 255));
+        btnHitungKalori.setText("📈  Hitung Kalori");
+        btnHitungKalori.setBorderPainted(false);
+        btnHitungKalori.setContentAreaFilled(false);
+        btnHitungKalori.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHitungKaloriMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHitungKaloriMouseExited(evt);
+            }
+        });
+        btnHitungKalori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHitungKaloriActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnHitungKalori, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 190, -1));
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("📈");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        btnCatatanMakanan.setBackground(new java.awt.Color(102, 0, 204));
+        btnCatatanMakanan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnCatatanMakanan.setForeground(new java.awt.Color(255, 255, 255));
+        btnCatatanMakanan.setText("      📝  Catatan Makanan");
+        btnCatatanMakanan.setBorderPainted(false);
+        btnCatatanMakanan.setContentAreaFilled(false);
+        btnCatatanMakanan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCatatanMakananMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCatatanMakananMouseExited(evt);
+            }
+        });
+        btnCatatanMakanan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCatatanMakananActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnCatatanMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 190, -1));
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("📝");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        btnDaftarMakanan.setBackground(new java.awt.Color(102, 0, 204));
+        btnDaftarMakanan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnDaftarMakanan.setForeground(new java.awt.Color(255, 255, 255));
+        btnDaftarMakanan.setText("     📁  Daftar Makanan");
+        btnDaftarMakanan.setBorderPainted(false);
+        btnDaftarMakanan.setContentAreaFilled(false);
+        btnDaftarMakanan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDaftarMakananMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDaftarMakananMouseExited(evt);
+            }
+        });
+        btnDaftarMakanan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDaftarMakananActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnDaftarMakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 190, -1));
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 28)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("⚙️");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+        btnLaporan.setBackground(new java.awt.Color(102, 0, 204));
+        btnLaporan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnLaporan.setForeground(new java.awt.Color(255, 255, 255));
+        btnLaporan.setText("📚  Laporan");
+        btnLaporan.setBorderPainted(false);
+        btnLaporan.setContentAreaFilled(false);
+        btnLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLaporanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLaporanMouseExited(evt);
+            }
+        });
+        btnLaporan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLaporanActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 190, -1));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("🔓");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+        btnPengaturan.setBackground(new java.awt.Color(102, 0, 204));
+        btnPengaturan.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnPengaturan.setForeground(new java.awt.Color(255, 255, 255));
+        btnPengaturan.setText("⚙️  Pengaturan");
+        btnPengaturan.setBorderPainted(false);
+        btnPengaturan.setContentAreaFilled(false);
+        btnPengaturan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPengaturanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPengaturanMouseExited(evt);
+            }
+        });
+        btnPengaturan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPengaturanActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnPengaturan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 190, -1));
 
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setFont(new java.awt.Font("Segoe UI Symbol", 0, 20)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("📁");
-        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
-
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Keluar");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, 30));
-
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Dashboard");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
-
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Catatan Makanan");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, 30));
-
-        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Daftar Makanan");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, 30));
-
-        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Laporan");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, 20));
-
-        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Pengaturan");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, 20));
-
-        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("Hitung Kalori");
-        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 20));
+        btnKeluar.setBackground(new java.awt.Color(192, 57, 43));
+        btnKeluar.setFont(new java.awt.Font("Segoe UI Symbol", 1, 13)); // NOI18N
+        btnKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        btnKeluar.setText("🔓  Keluar");
+        btnKeluar.setBorderPainted(false);
+        btnKeluar.setContentAreaFilled(false);
+        btnKeluar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnKeluarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnKeluarMouseExited(evt);
+            }
+        });
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 190, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 2));
@@ -234,25 +299,25 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel21.setText("Informasi Pribadi");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-laki", "Perempuan", " ", " " }));
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtNamaActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jarang Olahraga", "Ringan (1-3 hari/minggu)", "Sedang (3-5 hari/minggu)", "Berat (6-7 hari/minggu)", " ", " " }));
+        cmbJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-laki", "Perempuan", " ", " " }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Menurunkan Berat Badan", "Mempertahankan Berat Badan", "Menaikkan Berat Badan" }));
+        cmbAktivitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jarang Olahraga", "Ringan (1-3 hari/minggu)", "Sedang (3-5 hari/minggu)", "Berat (6-7 hari/minggu)", " ", " " }));
 
-        jButton1.setBackground(new java.awt.Color(102, 0, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Simpan Perubahan");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmbTargetDiet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Menurunkan Berat Badan", "Mempertahankan Berat Badan", "Menaikkan Berat Badan" }));
+
+        btnSimpanPerubahan.setBackground(new java.awt.Color(102, 0, 204));
+        btnSimpanPerubahan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSimpanPerubahan.setForeground(new java.awt.Color(255, 255, 255));
+        btnSimpanPerubahan.setText("Simpan Perubahan");
+        btnSimpanPerubahan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSimpanPerubahanActionPerformed(evt);
             }
         });
 
@@ -357,19 +422,19 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                         .addComponent(jLabel24)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbAktivitas, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbTargetDiet, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTargetKalori, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel43))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBerat, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbJenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUmur, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel40)
@@ -391,7 +456,7 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 161, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSimpanPerubahan, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(149, 149, 149))
         );
         jPanel3Layout.setVerticalGroup(
@@ -399,52 +464,52 @@ public class GuiProfilFiks extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel21)
-                .addGap(31, 31, 31)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUmur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbJenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBerat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTinggi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbAktivitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbTargetDiet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTargetKalori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSimpanPerubahan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
 
@@ -460,10 +525,10 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setText("Kebutuhan Kalori Harian");
 
-        jLabel50.setBackground(new java.awt.Color(0, 102, 0));
-        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel50.setText("2.000");
+        lblKebutuhanHarian.setBackground(new java.awt.Color(0, 102, 0));
+        lblKebutuhanHarian.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblKebutuhanHarian.setForeground(new java.awt.Color(0, 102, 0));
+        lblKebutuhanHarian.setText("2.000");
 
         jLabel51.setBackground(new java.awt.Color(255, 255, 255));
         jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -478,7 +543,7 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(jLabel50)
+                        .addComponent(lblKebutuhanHarian)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel51))
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -493,7 +558,7 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                 .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblKebutuhanHarian, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -502,13 +567,13 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel44.setText("BMR");
 
-        jLabel46.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel46.setText("1.668 kkal");
+        lblBMRSummary.setBackground(new java.awt.Color(255, 255, 255));
+        lblBMRSummary.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblBMRSummary.setText("1.668 kkal");
 
-        jLabel47.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel47.setText("1.375 kkal");
+        lblAktivitasSummary.setBackground(new java.awt.Color(255, 255, 255));
+        lblAktivitasSummary.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAktivitasSummary.setText("1.375 kkal");
 
         jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel48.setText("Ringkasan");
@@ -533,8 +598,8 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                                 .addComponent(jLabel49))
                             .addGap(145, 145, 145)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel47)
-                                .addComponent(jLabel46)))))
+                                .addComponent(lblAktivitasSummary)
+                                .addComponent(lblBMRSummary)))))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -545,10 +610,10 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblBMRSummary, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAktivitasSummary, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -595,7 +660,7 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -610,18 +675,20 @@ public class GuiProfilFiks extends javax.swing.JFrame {
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -638,13 +705,272 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSimpanPerubahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanPerubahanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSimpanPerubahanActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtNamaActionPerformed
+
+    private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
+        new Dashboard().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnDashboardActionPerformed
+
+    private void btnLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaporanActionPerformed
+        new Laporan().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLaporanActionPerformed
+
+    private void btnDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseEntered
+        btnDashboard.setContentAreaFilled(true);
+        btnDashboard.setBorderPainted(true);
+        btnDashboard.setBackground(new java.awt.Color(102, 0, 204));
+        btnDashboard.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnDashboardMouseEntered
+
+    private void btnDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseExited
+        btnDashboard.setContentAreaFilled(false);
+        btnDashboard.setBorderPainted(false);
+    }//GEN-LAST:event_btnDashboardMouseExited
+
+    private void btnHitungKaloriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungKaloriActionPerformed
+        this.dispose();
+        KalkulatorKalori1 kalori = new KalkulatorKalori1();
+        kalori.setVisible(true);
+        kalori.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnHitungKaloriActionPerformed
+
+    private void btnHitungKaloriMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungKaloriMouseEntered
+        btnHitungKalori.setContentAreaFilled(true);
+        btnHitungKalori.setBorderPainted(true);
+        btnHitungKalori.setBackground(new java.awt.Color(102, 0, 204));
+    }//GEN-LAST:event_btnHitungKaloriMouseEntered
+
+    private void btnHitungKaloriMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHitungKaloriMouseExited
+        btnHitungKalori.setContentAreaFilled(false);
+        btnHitungKalori.setBorderPainted(false);
+    }//GEN-LAST:event_btnHitungKaloriMouseExited
+
+    private void btnCatatanMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatatanMakananActionPerformed
+        this.dispose();
+        CatatanMakanan catatan = new CatatanMakanan();
+        catatan.setVisible(true);
+        catatan.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCatatanMakananActionPerformed
+
+    private void btnCatatanMakananMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatatanMakananMouseEntered
+        btnCatatanMakanan.setContentAreaFilled(true);
+        btnCatatanMakanan.setBorderPainted(true);
+        btnCatatanMakanan.setBackground(new java.awt.Color(102, 0, 204));
+        btnCatatanMakanan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnCatatanMakananMouseEntered
+
+    private void btnCatatanMakananMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCatatanMakananMouseExited
+        btnCatatanMakanan.setContentAreaFilled(false);
+        btnCatatanMakanan.setBorderPainted(false);
+    }//GEN-LAST:event_btnCatatanMakananMouseExited
+
+    private void btnDaftarMakananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarMakananActionPerformed
+        this.dispose();
+        DaftarMakanan daftar = new DaftarMakanan();
+        daftar.setVisible(true);
+        daftar.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnDaftarMakananActionPerformed
+
+    private void btnDaftarMakananMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaftarMakananMouseEntered
+        btnDaftarMakanan.setContentAreaFilled(true);
+        btnDaftarMakanan.setBorderPainted(true);
+        btnDaftarMakanan.setBackground(new java.awt.Color(102, 0, 204));
+        btnDaftarMakanan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnDaftarMakananMouseEntered
+
+    private void btnDaftarMakananMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaftarMakananMouseExited
+        btnDaftarMakanan.setContentAreaFilled(false);
+        btnDaftarMakanan.setBorderPainted(false);
+    }//GEN-LAST:event_btnDaftarMakananMouseExited
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void btnKeluarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseEntered
+        btnKeluar.setContentAreaFilled(true);
+        btnKeluar.setBorderPainted(true);
+        btnKeluar.setBackground(new java.awt.Color(192, 57, 43));
+        btnKeluar.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnKeluarMouseEntered
+
+    private void btnKeluarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKeluarMouseExited
+        btnKeluar.setContentAreaFilled(false);
+        btnKeluar.setBorderPainted(false);
+    }//GEN-LAST:event_btnKeluarMouseExited
+
+    private void btnPengaturanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPengaturanActionPerformed
+        new Pengaturan().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPengaturanActionPerformed
+
+    private void btnPengaturanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseEntered
+        btnPengaturan.setContentAreaFilled(true);
+        btnPengaturan.setBorderPainted(true);
+        btnPengaturan.setBackground(new java.awt.Color(102, 0, 204));
+        btnPengaturan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnPengaturanMouseEntered
+
+    private void btnPengaturanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPengaturanMouseExited
+        btnPengaturan.setContentAreaFilled(false);
+        btnPengaturan.setBorderPainted(false);
+    }//GEN-LAST:event_btnPengaturanMouseExited
+
+    private void btnLaporanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLaporanMouseEntered
+        btnLaporan.setContentAreaFilled(true);
+        btnLaporan.setBorderPainted(true);
+        btnLaporan.setBackground(new java.awt.Color(102, 0, 204));
+        btnLaporan.setForeground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_btnLaporanMouseEntered
+
+    private void btnLaporanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLaporanMouseExited
+        btnLaporan.setContentAreaFilled(false);
+        btnLaporan.setBorderPainted(false);
+    }//GEN-LAST:event_btnLaporanMouseExited
+
+    private void btnProfilSayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfilSayaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProfilSayaActionPerformed
+    private void aktifkanHitungOtomatis() {
+
+        javax.swing.event.DocumentListener dl = new javax.swing.event.DocumentListener() {
+            @Override
+            public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                hitungKaloriMulai();
+            }
+
+            @Override
+            public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                hitungKaloriMulai();
+            }
+
+            @Override
+            public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                hitungKaloriMulai();
+            }
+        };
+
+        txtUmur.getDocument().addDocumentListener(dl);
+        txtBerat.getDocument().addDocumentListener(dl);
+        txtTinggi.getDocument().addDocumentListener(dl);
+
+        cmbJenisKelamin.addActionListener(e -> hitungKaloriMulai());
+        cmbAktivitas.addActionListener(e -> hitungKaloriMulai());
+        cmbTargetDiet.addActionListener(e -> hitungKaloriMulai());
+    }
+
+    private void hitungKaloriMulai() {
+        try {
+
+            if (txtUmur.getText().trim().isEmpty()
+                    || txtBerat.getText().trim().isEmpty()
+                    || txtTinggi.getText().trim().isEmpty()) {
+                return;
+            }
+
+            int umur = Integer.parseInt(txtUmur.getText().trim());
+            double berat = Double.parseDouble(txtBerat.getText().trim());
+            double tinggi = Double.parseDouble(txtTinggi.getText().trim());
+            String jk = cmbJenisKelamin.getSelectedItem().toString();
+            String aktivitas = cmbAktivitas.getSelectedItem().toString();
+            String targetDiet = cmbTargetDiet.getSelectedItem().toString();
+
+            double bmr = 0;
+            if (jk.equalsIgnoreCase("Laki-laki")) {
+                bmr = (10 * berat) + (6.25 * tinggi) - (5 * umur) + 5;
+            } else {
+                bmr = (10 * berat) + (6.25 * tinggi) - (5 * umur) - 161;
+            }
+
+            double pengaliAktivitas = 1.2;
+            if (aktivitas.contains("Sedikit") || aktivitas.contains("Ringan")) {
+                pengaliAktivitas = 1.375;
+            } else if (aktivitas.contains("Cukup")) {
+                pengaliAktivitas = 1.55;
+            } else if (aktivitas.contains("Sangat")) {
+                pengaliAktivitas = 1.725;
+            }
+
+            double tdee = bmr * pengaliAktivitas;
+
+            double targetKaloriAkhir = tdee;
+            if (targetDiet.contains("Menurunkan")) {
+                targetKaloriAkhir = tdee - 500;
+            } else if (targetDiet.contains("Menaikkan")) {
+                targetKaloriAkhir = tdee + 500;
+            }
+
+            java.text.DecimalFormat df = new java.text.DecimalFormat("#,###");
+
+            lblBMRSummary.setText(df.format(bmr) + " kkal");
+            lblAktivitasSummary.setText(String.valueOf(pengaliAktivitas));
+
+            lblKebutuhanHarian.setText(df.format(targetKaloriAkhir) + " kkal");
+
+            txtTargetKalori.setText(df.format(targetKaloriAkhir));
+
+        } catch (NumberFormatException ex) {
+        }
+    }
+
+    private void aksiTombolSimpan() {
+        btnSimpanPerubahan.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                if (txtNama.getText().trim().isEmpty()
+                        || txtUmur.getText().trim().isEmpty()
+                        || txtBerat.getText().trim().isEmpty()
+                        || txtTinggi.getText().trim().isEmpty()) {
+
+                    JOptionPane.showMessageDialog(null,
+                            "Semua data informasi pribadi wajib diisi!",
+                            "Validasi Gagal",
+                            JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                try {
+
+                    String nama = txtNama.getText().trim();
+                    int umur = Integer.parseInt(txtUmur.getText().trim());
+                    double berat = Double.parseDouble(txtBerat.getText().trim());
+                    double tinggi = Double.parseDouble(txtTinggi.getText().trim());
+                    String jk = cmbJenisKelamin.getSelectedItem().toString();
+                    String aktivitas = cmbAktivitas.getSelectedItem().toString();
+                    String targetDiet = cmbTargetDiet.getSelectedItem().toString();
+                    String targetKalori = txtTargetKalori.getText().trim();
+
+                    String pesanSukses = "Perubahan Berhasil Disimpan!\n\n"
+                            + "Nama: " + nama + "\n"
+                            + "Target Kalori: " + targetKalori + " kkal";
+
+                    JOptionPane.showMessageDialog(null,
+                            pesanSukses,
+                            "Simpan Berhasil",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                } catch (NumberFormatException ex) {
+
+                    JOptionPane.showMessageDialog(null,
+                            "Kolom Umur, Berat, dan Tinggi harus berupa angka!",
+                            "Error Input",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+    }
 
     /**
      * @param args the command line arguments
@@ -668,37 +994,33 @@ public class GuiProfilFiks extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GuiProfilFiks().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ProfilSaya().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton btnCatatanMakanan;
+    private javax.swing.JButton btnDaftarMakanan;
+    private javax.swing.JButton btnDashboard;
+    private javax.swing.JButton btnHitungKalori;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnLaporan;
+    private javax.swing.JButton btnPengaturan;
+    private javax.swing.JButton btnProfilSaya;
+    private javax.swing.JButton btnSimpanPerubahan;
+    private javax.swing.JComboBox<String> cmbAktivitas;
+    private javax.swing.JComboBox<String> cmbJenisKelamin;
+    private javax.swing.JComboBox<String> cmbTargetDiet;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -716,21 +1038,14 @@ public class GuiProfilFiks extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -739,10 +1054,13 @@ public class GuiProfilFiks extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel lblAktivitasSummary;
+    private javax.swing.JLabel lblBMRSummary;
+    private javax.swing.JLabel lblKebutuhanHarian;
+    private javax.swing.JTextField txtBerat;
+    private javax.swing.JTextField txtNama;
+    private javax.swing.JTextField txtTargetKalori;
+    private javax.swing.JTextField txtTinggi;
+    private javax.swing.JTextField txtUmur;
     // End of variables declaration//GEN-END:variables
 }
