@@ -7,12 +7,20 @@ import java.util.stream.Collectors;
 
 public class CatatanImplementation implements CatatanInterface {
 
-    private static List<CatatanMakanann> catatanDatabase = new ArrayList<>();
+    private static List<CatatanMakanann> catatanDatabase = CatatanDataStorage.bacaDariFile();
     private static int autoIncrementId = 1;
     private MakananInterface makananInterface;
 
     public CatatanImplementation(MakananInterface makananInterface) {
         this.makananInterface = makananInterface;
+
+        if (!catatanDatabase.isEmpty()) {
+            int maxId = catatanDatabase.stream()
+                    .mapToInt(CatatanMakanann::getCatatanId)
+                    .max()
+                    .orElse(0);
+            autoIncrementId = maxId + 1;
+        }
     }
 
     @Override
@@ -30,8 +38,11 @@ public class CatatanImplementation implements CatatanInterface {
 
         catatan.setNamaMakanan(makanan.getNamaMakanan());
         catatan.setKategoriMakanan(makanan.getKategori());
+
         catatan.setCatatanId(autoIncrementId++);
         catatanDatabase.add(catatan);
+
+        CatatanDataStorage.simpanKeFile(catatanDatabase);
 
         System.out.printf("[CatatanInterface] Catatan ditambahkan: %s (%.1f porsi = %.0f kkal)%n",
                 makanan.getNamaMakanan(), catatan.getJumlahPorsi(), catatan.getTotalKalori());
@@ -74,8 +85,12 @@ public class CatatanImplementation implements CatatanInterface {
                     catatan.setTotalProtein(makanan.getProtein() * catatan.getJumlahPorsi());
                     catatan.setTotalLemak(makanan.getLemak() * catatan.getJumlahPorsi());
                     catatan.setNamaMakanan(makanan.getNamaMakanan());
+                    catatan.setKategoriMakanan(makanan.getKategori());
                 }
                 catatanDatabase.set(i, catatan);
+
+                CatatanDataStorage.simpanKeFile(catatanDatabase);
+
                 System.out.println("[CatatanInterface] Catatan ID=" + catatan.getCatatanId() + " berhasil diperbarui.");
                 return true;
             }
@@ -85,12 +100,15 @@ public class CatatanImplementation implements CatatanInterface {
 
     @Override
     public boolean hapusCatatan(int catatanId) {
-        return catatanDatabase.removeIf(c -> {
-            if (c.getCatatanId() == catatanId) {
-                System.out.println("[CatatanInterface] Catatan ID=" + catatanId + " berhasil dihapus.");
-                return true;
-            }
-            return false;
-        });
+
+        boolean apakahDihapus = catatanDatabase.removeIf(c -> c.getCatatanId() == catatanId);
+
+        if (apakahDihapus) {
+
+            CatatanDataStorage.simpanKeFile(catatanDatabase);
+            System.out.println("[CatatanInterface] Catatan ID=" + catatanId + " berhasil dihapus.");
+            return true;
+        }
+        return false;
     }
 }
